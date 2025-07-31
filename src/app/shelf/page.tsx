@@ -79,17 +79,17 @@ export default function Page() {
       },
       {
          title: "Currently Reading",
-         books: books.filter((book) => book.status === "CURRENTLY_READING"),
+         books: books?.filter((book) => book.status === "CURRENTLY_READING"),
          color: "bg-blue-300"
       },
       {
          title: "Want to Read",
-         books: books.filter((book) => book.status === "WANT_TO_READ"),
+         books: books?.filter((book) => book.status === "WANT_TO_READ"),
          color: "bg-green-300"
       },
       {
          title: "Read",
-         books: books.filter((book) => book.status === "READ"),
+         books: books?.filter((book) => book.status === "READ"),
       },
    ]
 
@@ -131,7 +131,7 @@ export default function Page() {
                <h1 className="text-center text-2xl font-bold">Personal Library</h1>
                <p className="text-center text-sm">Manage your bookshelf and track your reading progress</p>
 
-            {books.length > 0 ? (
+            {books?.length > 0 ? (
                <>
                {/* Category Buttons */}
           <div className="flex flex-wrap justify-center gap-4 mt-10">
