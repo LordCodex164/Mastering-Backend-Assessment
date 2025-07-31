@@ -69,10 +69,8 @@ export default function Search() {
     }
 
     useEffect(() => {
-        
         fetchUrl(searchQuery)
         fetchDb()
-        
     }, [searchQuery])
 
     const handleSearchTerm = (e: ChangeEvent<HTMLInputElement>) => {
@@ -93,9 +91,9 @@ export default function Search() {
 
              <div className="lg:px-[10em] xl:px-[25em]">
                 <div className="bg-[#c8cbd0] rounded-[12px] py-[2px] lg:mx-[0em]">
-                <div className="flex flex-col md:flex-row gap-[10px] justify-between pl-[10px] pr-[20px]">
-                   <input onChange={handleSearchTerm} type="text" placeholder="Search for a book" className="pl-[20px] outline-none rounded-md" />
-                   <button className="bg-amber-300 px-[20px] py-[12px] rounded-[6px] text-black hover:text-[#23292a] cursor-pointer my-[10px]">Search</button> 
+                <div className="flex flex-col md:flex-row gap-[10px] justify-between pl-[10px] py-[5px] pr-[20px]">
+                   <input onChange={handleSearchTerm} type="text" placeholder="Search for a book" className="pl-[20px] w-full outline-none rounded-md" />
+                   <button className="bg-amber-300 px-[20px] py-[12px] rounded-[6px] text-black hover:text-[#23292a] cursor-pointer my-[10px]" onClick={() => fetchUrl(searchQuery)}>Search</button> 
                 </div>
             </div> 
              </div>
