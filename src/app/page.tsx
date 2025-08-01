@@ -31,9 +31,9 @@ export default async function Home() {
     {
       icon: "1",
       title: "Personal Shelf",
-      description: "Personal Shelf",
+      description: "Personal Shelf", 
     },
-  ];
+  ]; 
   
   return (
     <Providers>
