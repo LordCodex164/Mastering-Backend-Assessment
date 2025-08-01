@@ -17,7 +17,7 @@ export async function POST(request: Request){
 
         const book = await prisma.book.create({
             data: {
-                userId: user?.id! || "1234",
+                userId: user?.id!,
                 googleId,
                 title,
                 author,
@@ -45,7 +45,7 @@ export async function GET(request: Request){
 
         const books = await prisma.book.findMany({
             where: {
-                userId: user?.id || "1234"
+                userId: user?.id
             }
         })
         

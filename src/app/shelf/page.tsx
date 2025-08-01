@@ -9,6 +9,7 @@ import Image from "next/image";
 import clsx from "clsx";
 import toast from "react-hot-toast";
 import { CategoryKey, statusOptions } from "@/types/shelf";
+import Link from "next/link";
 
  
 export default function Page() {
@@ -190,7 +191,9 @@ export default function Page() {
                   <div className="flex flex-col gap-[10px]">
                      <p>Your shelf is empty</p>
                      <p>Search for books to add to your shelf</p>
+                     <Link href={"/search"} className="bg-amber-400 text-center hover:bg-amber-400 flex items-center px-[5px] rounded-sm">
                      <Button className="hover:bg-amber-400 py-[15px] text-[12px] cursor-pointer">Search Books</Button>
+                     </Link>
                   </div>
                
                </div>

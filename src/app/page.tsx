@@ -57,7 +57,7 @@ export default async function Home() {
           <CardGrid cards={cards} />
 
           <div className="mx-auto container flex justify-center">
-            <Link href={"/shelf"} className="bg-amber-400 text-center hover:bg-amber-400 flex items-center px-[5px] rounded-sm">
+            <Link href={"/search"} className="bg-amber-400 text-center hover:bg-amber-400 flex items-center px-[5px] rounded-sm">
               <Star/>
               <Button className="py-[15px] text-[12px] cursor-pointer">Get Started</Button>
             </Link>
