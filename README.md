@@ -65,7 +65,6 @@ Optional Authentication: Supports Google OAuth via NextAuth.js (defaults to a mo
 ## Project Structure
 
 ```
-
 bookshelf/
 ├── app/
 │   ├── api/
