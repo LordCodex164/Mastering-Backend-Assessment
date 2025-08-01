@@ -15,6 +15,7 @@ export async function searchBooks(query: string): Promise<BookSearchResult[]> {
     const response = await axios.get(BASE_URL!, {
       params: { q: query, key: API_KEY, maxResults: 20 },
     });
+    
     const items = response.data.items || [];
     return items.map((item: any) => ({
       id: item.id,

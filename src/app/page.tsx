@@ -5,8 +5,9 @@ import Link from "next/link"
 import { Button } from "@/components/ui/Button";
 import CardGrid from "@/components/ui/card";
 import { getServerSession } from "next-auth";
-import { authOptions } from "@/lib/auth";
+import { authOptions } from "@/auth";
 import { redirect } from "next/navigation";
+import { Providers } from "./(root)/sign-in/provider";
 
 export default async function Home() {
 
@@ -31,7 +32,8 @@ export default async function Home() {
   ];
   
   return (
-    <div className="min-h-screen bg-background">
+    <Providers>
+      <div className="min-h-screen bg-background">
 
         <section>
           <div className="container mx-auto mt-[70px]">
@@ -66,5 +68,7 @@ export default async function Home() {
 
 
     </div>
+    </Providers>
+    
   );
 }
