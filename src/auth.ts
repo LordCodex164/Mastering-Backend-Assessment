@@ -64,7 +64,7 @@ export const authOptions: NextAuthOptions = {
                 } else {
                     //session.user!.id = token.sub!; 
                 }
-                return session;
+                //return session;
             }catch(error){
                 console.log(error, "error")
             }

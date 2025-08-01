@@ -1,5 +1,5 @@
 //server only
-//"use client"
+"use client"
 import { BookOpen, Search, Library, Star } from "lucide-react";
 import Link from "next/link"
 import { Button } from "@/components/ui/Button";
@@ -8,14 +8,18 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/auth";
 import { redirect } from "next/navigation";
 import { Providers } from "./(root)/sign-in/provider";
+import { useSession } from "next-auth/react";
+import { useEffect } from "react";
 
-export default async function Home() {
+export default function Home() {
 
-  const session = await getServerSession(authOptions);
+  const { data: session } = useSession();
 
-  if(!session){
-    redirect("/sign-in")
-  }
+  useEffect(() => {
+    if(!session){
+      redirect("/sign-in")
+    }
+  }, [session])
 
   const cards = [
     {

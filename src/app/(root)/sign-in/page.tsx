@@ -4,6 +4,7 @@ import { signIn } from "next-auth/react";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
+import { useEffect } from "react";
 
 export default function SignInPage() {
   const router = useRouter();
@@ -26,12 +27,14 @@ export default function SignInPage() {
 
   const { data: session } = useSession();
 
-  console.log("session", session)
-  if(session){
-    router.push("/")
-  }
-
-  
+  useEffect(() => {
+    console.log("session", session)
+    if(session){
+      router.push("/")
+    } else {
+      router.push("/sign-in")
+    }
+  }, [session])
 
   return (
     

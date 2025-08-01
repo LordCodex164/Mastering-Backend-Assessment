@@ -10,9 +10,19 @@ import clsx from "clsx";
 import toast from "react-hot-toast";
 import { CategoryKey, statusOptions } from "@/types/shelf";
 import Link from "next/link";
+import { useSession } from "next-auth/react";
+import { redirect } from "next/navigation";
 
  
 export default function Page() {
+
+   const { data: session } = useSession();
+
+  useEffect(() => {
+    if(!session){
+      redirect("/sign-in")
+    }
+  }, [session])
     
    const [books, setBooks] = useState<any[]>([])
    const [activeCategory, setActiveCategory] = useState<CategoryKey>("ALL");

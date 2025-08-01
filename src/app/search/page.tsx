@@ -6,9 +6,19 @@ import Image from "next/image"
 import { IBook } from "@/types/book"
 import { NextResponse } from "next/server";
 import toast from "react-hot-toast";
+import { redirect } from "next/navigation";
+import { useSession } from "next-auth/react";
 
 
 export default function Search() {
+
+    const { data: session } = useSession();
+
+    useEffect(() => {
+        if(!session){
+        redirect("/sign-in")
+        }
+    }, [session])
 
     const [searchQuery, setSearchQuery] = useState<string>("")
     const [isLoading, setIsLoading] = useState<boolean>(false)
