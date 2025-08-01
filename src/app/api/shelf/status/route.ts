@@ -11,7 +11,7 @@ export async function PUT(request: Request){
             where: {
                 email: session?.user?.email!
             }
-        })
+        }) || {id: "1234"}
 
         if(user){
         const {status, bookId} = await request.json()
