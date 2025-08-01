@@ -19,16 +19,16 @@ export const authOptions: NextAuthOptions = {
         strategy: "jwt",
     },
     callbacks:{
-        async signIn({profile}){
-            let user = await prisma.user.findUnique({
+        async signIn({user}){
+            let user_ = await prisma.user.findUnique({
                 where: {
-                    email: profile?.email!,
+                    email: user?.email!,
                 }
             })
-            if(!user){
-             user = await prisma.user.create({
+            if(!user_){
+             user_ = await prisma.user.create({
                 data: {
-                    email: profile?.email!,
+                    email: user?.email!,
                 }
             })
             }
