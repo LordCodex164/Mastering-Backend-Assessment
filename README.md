@@ -1,13 +1,27 @@
-##BookShelf
+ # BookShelf
 
 BookShelf is a full-stack web application that enables users to search for books using the Google Books API, manage a personal bookshelf, and track their reading progress. Users can add books to their shelf, mark them as "Read," "Currently Reading," or "Want to Read," filter their collection by status, and remove books as needed. Built with modern web technologies, BookShelf provides a responsive, intuitive, and polished user experience with robust error handling and feedback.
 
-##Table of Contents
+## Table of Contents
 
+1. [Features](#features)
+2. [Tech Stack](#tech-stack)
+3. [Project Structure](#project-structure)
+4. [Setup Instructions](#setup-instructions)
+5. [Environment Variables](#environment-variables)
+6. [Running the Application](#running-the-application)
+7. [Deployment](#deployment)
+8. [Usage](#usage)
+9. [Authentication](#authentication)
+10. [Contributing](#contributing)
+11. [License](#license)
+12. [Built by](#built-by)
+13. [Live Demo](#live-demo)
+14. [Repository](#repository)
 
-##Features
+## Features
+
 Book Search: Search for books by title, author, or keyword using the Google Books API.
-
 
 
 Personal Bookshelf: Add books to a personal shelf with a single click.
@@ -18,9 +32,6 @@ Reading Status Tracking: Mark books as "Read," "Currently Reading," or "Want to 
 
 Shelf Filtering: Filter books by status (All, Read, Currently Reading, Want to Read).
 
-
-
-Book Removal: Remove books from the shelf with ease.
 
 
 
