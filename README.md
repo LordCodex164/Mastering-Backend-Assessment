@@ -13,9 +13,7 @@ Book Search: Search for books by title, author, or keyword using the Google Book
 Personal Bookshelf: Add books to a personal shelf with a single click.
 
 
-
 Reading Status Tracking: Mark books as "Read," "Currently Reading," or "Want to Read."
-
 
 
 Shelf Filtering: Filter books by status (All, Read, Currently Reading, Want to Read).
@@ -120,8 +118,6 @@ Robust UX: Loading spinners, empty states, and error messages for a seamless exp
 Optional Authentication: Supports Google OAuth via NextAuth.js (defaults to a mock user ID for simplicity).
 
 Tech Stack
-
-
 
 
 
@@ -232,13 +228,7 @@ NEXTAUTH_SECRET="your-random-secret"
 GOOGLE_CLIENT_ID="your-google-client-id"
 GOOGLE_CLIENT_SECRET="your-google-client-secret"
 
-
-
-
-
 GOOGLE_BOOKS_API_KEY: Obtain from the Google Cloud Console.
-
-
 
 NEXTAUTH_URL: Set to your app’s URL (e.g., http://localhost:3000 for development).
 
@@ -251,9 +241,6 @@ NEXTAUTH_SECRET: Generate a random secret using openssl rand -base64 32.
 GOOGLE_CLIENT_ID/SECRET: Obtain from Google Cloud Console for OAuth authentication (required only if using NextAuth).
 
 Running the Application
-
-
-
 
 
 Start the development server:
