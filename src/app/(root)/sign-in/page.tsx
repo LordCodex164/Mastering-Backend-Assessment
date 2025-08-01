@@ -9,7 +9,7 @@ export default function SignInPage() {
   const router = useRouter();
   const handleGoogleSignIn = async () => {
     try {
-      const result = await signIn("google", { redirect: true, redirectTo: "/" });
+      const result = await signIn("google", { redirect: false });
       console.log(result)
       if(result?.error){
         toast.error(result.error)
