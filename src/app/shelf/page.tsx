@@ -123,6 +123,26 @@ export default function Page() {
           return null;
       }
     };
+
+    const deleteBook = async (bookId: string) => {
+      try{
+         const response = await fetch(`/api/shelf`, {
+            method: "DELETE",
+            headers: {
+               "Content-Type": "application/json",
+            },
+            body: JSON.stringify({bookId}),
+         })
+         if(!response.ok){
+            throw new Error("Failed to delete book")
+         }
+         toast.success("Book deleted from the shelf")
+         fetchBooks()
+      }catch(error){
+         console.error("Delete book error:", error)
+         toast.error("Failed to delete book")
+      }
+    }
   
 
     const filteredBooks =
@@ -186,6 +206,12 @@ export default function Page() {
                            className="mt-3 text-xs bg-amber-400 rounded-[4px] cursor-pointer px-[10px] py-[10px] hover:underline"
                         >
                            Change Status
+                        </button>
+                        <button
+                           onClick={() => deleteBook(book.id)}
+                           className="mt-3 text-xs bg-red-400 rounded-[4px] cursor-pointer px-[10px] py-[10px] hover:underline ml-[10px]"
+                        >
+                           Delete
                         </button>
                      </div>
                   ))}

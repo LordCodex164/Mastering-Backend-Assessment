@@ -55,3 +55,28 @@ export async function GET(request: Request){
         return NextResponse.json({error: "Failed to get books from the shelf"})
     }
 }
+
+export async function DELETE(request: Request){
+    try{
+        const {bookId} = await request.json()
+        const session = await getServerSession(authConfig)
+
+        const user = await prisma.user.findUnique({
+            where: {
+                email: session?.user?.email!
+            }
+        })
+        
+        const book = await prisma.book.delete({
+            where: {
+                id: bookId
+            }
+        })
+
+        return NextResponse.json({book, message: "Book deleted from the shelf"})
+
+        
+    }catch(err){
+
+    }
+}
